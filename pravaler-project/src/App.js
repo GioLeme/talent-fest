@@ -1,12 +1,15 @@
 import React from 'react';
 import Home from '../src/home/home';
 import Nav from '../src/components/nav/nav'
+import Simulator from './Simulator/index';
+import './styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
       <Nav />
+      <Simulator />
       <Switch>
         <Route exact path='/'><Home/></Route>
       </Switch>
@@ -15,4 +18,3 @@ function App() {
 }
 
 export default App;
-
