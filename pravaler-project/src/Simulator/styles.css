@@ -34,6 +34,7 @@
   color: #696767;
   outline: 0;
   width: 70%;
+  max-width: 400px;
   border: 1px solid #949292;
   border-radius: 7px;
   font-size: 20px;
@@ -47,11 +48,13 @@
 
 .simulator-range-input {
   width: 70%;
+  max-width: 400px;
   margin: 30px 0;
 }
 
 .simulator-submit {
   width: 90%;
+  max-width: 500px;
   background-color: #f15d22;
   color: #fff;
   border: none;
@@ -64,6 +67,7 @@
 
 .simulator-result-container {
   width: 90%;
+  max-width: 500px;
   margin: 10px 0 20px 0;
   padding: 15px;
   border: 1px solid #3a4950;

@@ -7,9 +7,11 @@ const Simulator = () => {
   const [result, setResult] = useState('')
   const calculate = e => {
     e.preventDefault()
-    const incomeSum = parseFloat(studentIncome + sureteeIncome)
+    const incomeSum = parseInt(studentIncome) + parseInt(sureteeIncome)
     setResult((incomeSum / 2.2).toFixed(2))
   }
+
+  // console.log((/^[0-9]*$/).test('3'))
 
   return (
     <div className="simulator-container">
@@ -22,7 +24,12 @@ const Simulator = () => {
           className="simulator-input"
           value={studentIncome}
           type='text'
-          onChange={(e) => setStudentIncome(e.currentTarget.value)}
+          onChange={(e) => {
+              if ((/^[0-9]*$/).test(e.currentTarget.value)) {
+                setStudentIncome(e.currentTarget.value)
+              }
+            }
+          }
         />
         <input
           className="simulator-range-input"
@@ -41,7 +48,13 @@ const Simulator = () => {
           className="simulator-input"
           value={sureteeIncome}
           type='text'
-          onChange={(e) => setSureteeIncome(e.currentTarget.value)}
+          onChange={(e) => 
+            {
+              if ((/^[0-9]*$/).test(e.currentTarget.value)) {
+                setSureteeIncome(e.currentTarget.value)
+              }
+            }
+          }
         />
         <input
           className="simulator-range-input"
