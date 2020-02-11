@@ -16,7 +16,7 @@ const StudentData = () => {
         <Input 
           type={'number'} 
           placeholder={'cpf'}
-          onChange={(e) => cpfValidate(e)}
+         // onChange={(e) => cpfValidate(e)}
         />
         <Input 
           type={'text'} 
