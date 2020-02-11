@@ -1,6 +1,7 @@
 //fazer as rotas aqui.
 import React from 'react';
-import Simulator from './simulator/simulator';
+import Simulator from './Simulator/index';
+import './styles.css';
 
 const App = () => {
   return(
