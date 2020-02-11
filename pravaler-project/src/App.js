@@ -1,3 +1,18 @@
-//fazer as rotas aqui.
-// import React from 'react';
-// export default App;
+import React from 'react';
+import Home from '../src/home/home';
+import Nav from '../src/components/nav/nav'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <Router>
+      <Nav />
+      <Switch>
+        <Route exact path='/'><Home/></Route>
+      </Switch>
+    </Router>
+  )
+}
+
+export default App;
+
