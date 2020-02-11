@@ -9,23 +9,23 @@ const StudentData = () => {
         <Input 
           type={'number'} 
           placeholder={'cpf'}
-          onChange={(e) => cpfValidate(e)}
+         // onChange={(e) => cpfValidate(e)}
         />
       </form>
     );
 
-  function cpfValidate(e){
-  const regex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/gm
-  const cpfValue= (e.currentTarget.value)
-  setCpfNumber(cpfValue)
-  console.log(typeof(cpfValue));
+  // function cpfValidate(e){
+  // const regex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/gm
+  // const cpfValue= (e.currentTarget.value)
+  // setCpfNumber(cpfValue)
+  // console.log(typeof(cpfValue));
   
-  console.log(cpfValue.match(regex));
-  console.log(regex.exec(cpfValue))
+  // console.log(cpfValue.test(regex));
+  // console.log(regex.exec(cpfValue))
 
   
 
-    }
+    // }
 
 };
 
