@@ -9,6 +9,7 @@ function Home() {
         <p>Faculdade?</p>
         <p> A gente te ajuda a alcançar esse sonho</p>
       </main>
+      <button className='home-register-btn'>Simule e cadastre-se</button>
 
       <section>
         <p>O PRAVALER é uma empresa de crédito estudantil que tem como objetivo facilitar a forma de pagamento pra você estudar.</p>

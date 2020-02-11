@@ -9,10 +9,10 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Simulator />
       <Switch>
         <Route exact path='/'><Home/></Route>
       </Switch>
+      <Simulator />
     </Router>
   )
 }
