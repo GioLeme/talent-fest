@@ -6,19 +6,19 @@ export default function Course(e) {
     return (
         <div class="course-container">
             <form>
-                <label for="college">Instituição</label>
+                <label htmlFor="college">Instituição</label>
                 <Input
                     type={'text'}
                     value={e.currentTarget}
                     placeholder={'Nome da instituição de ensino'}
                 />
-                <label for="course">Curso</label>
+                <label htmlFor="course">Curso</label>
                 <Input
                     type={'text'}
                     value={e.currentTarget}
                     placeholder={'Nome do curso'}
                 />
-                <label for="money">Mensalidade</label>
+                <label htmlFor="money">Mensalidade</label>
                 <Input
                     type={'number'}
                     value={e.currentTarget}
