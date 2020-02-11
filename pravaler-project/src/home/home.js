@@ -1,19 +1,26 @@
 import React from 'react';
+import Imagestudy from  '../images/study.png';
+import '../home/home.css'
 
 function Home() {
   return (
     <>
-      <main>
-        <p>Quer</p>
-        <p>Fazer</p>
-        <p>Faculdade?</p>
-        <p> A gente te ajuda a alcançar esse sonho</p>
+     <div className="container-home">
+      <main className="main-home">
+      <div className="question-home">
+        <p className="p1">Quer</p>
+        <p className="p2">Fazer</p>
+        <p className="p3">Faculdade?</p>
+        <p className="p4"> A gente te ajuda a alcançar esse sonho</p>
+      </div>
+      <img src={Imagestudy} alt='image' className="img-home"></img>
       </main>
 
       <section>
+        <h1>QUEM SOMOS</h1>
         <p>O PRAVALER é uma empresa de crédito estudantil que tem como objetivo facilitar a forma de pagamento pra você estudar.</p>
         <p>A gente acredita que a educação é pra todo mundo e pra mudar o mundo</p>
-        <p>vantagens:</p>
+        <h1>VANTAGENS:</h1>
         <ul>
           <li>Não precisa de conta em banco.</li>
           <li>Tudo on-line.</li>  
@@ -22,10 +29,11 @@ function Home() {
           <li>Não tem limite de vagas.</li>
           <li>As parcelas não se acumulam.</li>
           <li>Pode pedir seu ﬁnanciamento o ano todo.</li>
-          <li> Sonha em fazer intercâmbio? Aqui no PRAVALER você também pode financiar seus estudos no exterior.</li>
+          <li>Sonha em fazer intercâmbio? Aqui no PRAVALER você também pode financiar seus estudos no exterior.</li>
         </ul>
       </section>
-    </>
+    </div> 
+  </>
   )
 }
 
