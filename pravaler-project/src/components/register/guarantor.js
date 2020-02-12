@@ -13,6 +13,9 @@ export default function Guarantor(props) {
     fillFields()
   },[])
 
+  if(guarantorCpf && guarantorName && monthlyIncome){
+    props.setGuarantorReady(true)
+  }
 
   function cpfValidate(e) {
     let cpfValue = e.currentTarget.value;

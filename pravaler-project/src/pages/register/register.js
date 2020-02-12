@@ -9,6 +9,9 @@ import SweetAlert from "sweetalert2-react";
 
 function RegisterPage() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [studentReady, setStudentReady] = useState(false);
+  const [courseReady, setCourseReady] = useState(false);
+  const [guarantorReady, setGuarantorReady] = useState(false);
   const [message, setMessage] = useState({
     show: false,
     title:'',
@@ -46,9 +49,9 @@ function RegisterPage() {
    
   return (
     <div>
-      <Student step={currentStep}/>
-      <Course  step={currentStep}/>
-      <Guarantor step={currentStep}/>
+      <Student step={currentStep} studentReady={studentReady} setStudentReady={setStudentReady}/>
+      <Course  step={currentStep} courseReady={courseReady} setCourseReady={setCourseReady}/>
+      <Guarantor step={currentStep} guarantorReady={guarantorReady} setGuarantorReady={setGuarantorReady}/>
       <div >
         <Button 
         handleClick={() => setCurrentStep(currentStep - 1)}
@@ -60,9 +63,11 @@ function RegisterPage() {
           handleClick={() => setCurrentStep(currentStep + 1)}
           title={'próximo >'}
           />
-        :<Button 
-        handleClick={saveDataInFirebase}
-        title={'Finalizar Cadastro'}
+          :<Button 
+          handleClick={saveDataInFirebase}
+          title={'Finalizar Cadastro'}
+          disabled={!studentReady, !courseReady, !guarantorReady}
+          type={'submit'}
         
         />
       }
