@@ -9,13 +9,14 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  background-image: url('../images/study.png');
   background: linear-gradient(180deg, #3A4851 0%, rgba(255, 255, 255, 0) 100%), #E35D29;
+  /* background-image: url('../images/study.png'); */
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  z-index: -2;
 }
 
 .img-home{
@@ -34,6 +35,7 @@
   justify-content: space-around;
   height: 50%;
   margin-top: -55%;
+  z-index: -1;
 }
 
 .question-home{

@@ -1,5 +1,4 @@
 /*MOBILE*/
-@media (max-width: 700px){
 *{
   margin: 0;
   padding: 0;
@@ -20,10 +19,8 @@
 .register-nav-btn{
   color: #ffffff;
   background-color: #E35D29;
-  font-size: 95%;
-  width: 40vw;
-  margin-left: 3%;
-  margin-right: 2%;
+  font-size: 90%;
+  width: 30vw;
   border-radius: 10px;
   padding: 2%;
   text-transform: uppercase;
@@ -37,9 +34,9 @@
 .company-nav-btn{
   color: #E35D29;
   background-color: #ffffff;
-  font-size: 95%;
+  font-size: 90%;
+  width: 26vw;
   border-radius: 10px;
-  margin-right: 2%;
   padding: 2%;
   text-transform: uppercase;
   font-weight: bold;
@@ -48,7 +45,6 @@
   color: #ffffff;
   background-color: #E35D29; 
   cursor: pointer;
-}
 }
 
 /*WEB*/
@@ -58,50 +54,17 @@
   padding: 0;
   border:none;
 }
-.nav-bg {
-  background-color: #3A4851;
-  width: 100vw;
-  height: 8vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.register-nav-btn{
-  color: #ffffff;
-  background-color: #E35D29;
-  font-size: 95%;
-  width: 15vw;
-  height: 6vh;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.register-nav-btn:hover{
-  color: #E35D29;
-  background-color: #ffffff;  
-  cursor: pointer;
-}
-.register-nav-btn:active{
-  color: #ffffff;
-  background-color: #E35D29;  
+.nav-logo{
+  width: 10vw;
 }
 .company-nav-btn{
-  color: #E35D29;
-  background-color: #ffffff;
-  font-size: 95%;
-  width: 15vw;
-  height: 6vh;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
+  width: 20vw;
+  padding: 1%;
+  font-size: 100%;
 }
-.company-nav-btn:hover{
-  color: #ffffff;
-  background-color: #E35D29; 
-  cursor: pointer;
-}
-.company-nav-btn:active{
-  color: #E35D29;
-  background-color: #ffffff; 
+.register-nav-btn{
+  width: 20vw;
+  padding: 1%;
+  font-size: 100%;
 }
 }
