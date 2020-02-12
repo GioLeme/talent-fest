@@ -34,6 +34,8 @@ function RegisterPage() {
       })
       setTimeout(() => {
         setMessage({})
+        {window.location='/'}
+
       }, 3000);
       })
       .catch(() =>  {setMessage({
@@ -43,9 +45,9 @@ function RegisterPage() {
       })
       setTimeout(() => {
         setMessage({})
+        {window.location='/'}
       }, 3000);
       });
-      {window.location='/'}
   }
    
   return (

@@ -37,6 +37,7 @@ const StudentData = (props) => {
       cpfValue = cpfValue.replace( /(\d{3})(\d{1,2})$/ , "$1-$2");
       setUserCpfNumber(cpfValue)    
     }
+    
     console.log(validateCPF(cpfValue))
   }
 
@@ -113,6 +114,7 @@ const StudentData = (props) => {
         onChange={(e) => cpfValidate(e)}
         focusOut={saveUserData}
       />
+      <p></p>
       <label htmlFor="name">Nome</label>
       <Input 
         type={'text'} 
