@@ -34,7 +34,8 @@ const Admin = () => {
 }
 
   return (
-    <section className="admin-layout">
+    <main className="admin-layout">
+    {/* <section> */}
       <h2 className='admin-title'>Alunos Cadastrados</h2>
       <ul className="data-board">
         {userList.map((user) => (
@@ -51,11 +52,12 @@ const Admin = () => {
             </div>
         ))}
       </ul>
-      
       <div className="return-btn-div">
       <button className='return-admin-button' onClick={()=> window.location='/'}>Voltar</button>
       </div>
-    </section>
+      
+    {/* </section> */}
+    </main>
   )
 }
 
