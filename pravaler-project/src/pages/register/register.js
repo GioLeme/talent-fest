@@ -6,6 +6,7 @@ import Button from "../../components/button/button"
 import fire from '../../config/config'
 import {getInLocalStorage} from '../../utils/handleRegister'
 import SweetAlert from "sweetalert2-react";
+import '../../components/button/button.css'
 
 function RegisterPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -52,14 +53,16 @@ function RegisterPage() {
       <Student step={currentStep} studentReady={studentReady} setStudentReady={setStudentReady}/>
       <Course  step={currentStep} courseReady={courseReady} setCourseReady={setCourseReady}/>
       <Guarantor step={currentStep} guarantorReady={guarantorReady} setGuarantorReady={setGuarantorReady}/>
-      <div >
+      <div  class="buttons" >
         <Button 
         handleClick={() => setCurrentStep(currentStep - 1)}
+        class= {'current-step'}
         title={'< anterior'}
         disabled={currentStep === 1}
         />
         {currentStep !== 3 
         ?<Button 
+          class= {'current-step'}
           handleClick={() => setCurrentStep(currentStep + 1)}
           title={'próximo >'}
           />
@@ -68,7 +71,6 @@ function RegisterPage() {
           title={'Finalizar Cadastro'}
           disabled={!studentReady, !courseReady, !guarantorReady}
           type={'submit'}
-        
         />
       }
         <SweetAlert

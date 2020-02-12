@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 import Input from "../input/input";
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
+import './register.css'
 
 
 export default function Course(props) {
@@ -53,9 +54,9 @@ function fillFields(){
 
 if (props.step !== 2 ) return null
   return (
-    <div className="course-container">
-      <form>
-        <label htmlFor="cpf">Dados da Instituição de ensino:</label>
+    <div className="container">
+      <form class="form">
+        <p class="title">Sobre o Curso</p>
         <label htmlFor="college">Instituição</label>
         <Input
           type={"text"}
