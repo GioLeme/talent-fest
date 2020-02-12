@@ -67,6 +67,7 @@ function RegisterPage() {
           title={'próximo >'}
           />
           :<Button 
+          class= {'current-step'}
           handleClick={saveDataInFirebase}
           title={'Finalizar Cadastro'}
           disabled={!studentReady, !courseReady, !guarantorReady}
