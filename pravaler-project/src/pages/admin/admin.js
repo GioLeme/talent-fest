@@ -35,7 +35,7 @@ const Admin = () => {
 
   return (
     <section className="admin-layout">
-      <h2>Lista de Alunos Cadastrados</h2>
+      <h2 className='admin-title'>Alunos Cadastrados</h2>
       <ul className="data-board">
         {userList.map((user) => (
             <div className="user-data">
@@ -45,12 +45,16 @@ const Admin = () => {
               <p>Renda: </p>
               <p>Renda do Fiador</p>
               <div className="control-btn">
-                <input type="submit" value="Aprovar" className="accept-btn" onClick={() => accept(user)} />
                 <input type="submit" value="Reprovar" className="decline-btn" onClick={() => decline(user)} />
+                <input type="submit" value="Aprovar" className="accept-btn" onClick={() => accept(user)} />
               </div>
             </div>
         ))}
       </ul>
+      
+      <div className="return-btn-div">
+      <button className='return-admin-button' onClick={()=> window.location='home'}>Voltar</button>
+      </div>
     </section>
   )
 }

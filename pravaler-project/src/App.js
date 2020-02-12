@@ -11,7 +11,7 @@ function App() {
       <Nav />
       <Switch>
       <Route exact path='/admin'><Admin/></Route>
-        <Route exact path='/'><Home/></Route>
+        <Route path='/home'><Home/></Route>
       </Switch>
     </Router>
   )

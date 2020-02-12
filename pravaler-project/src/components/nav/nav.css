@@ -66,7 +66,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.register-nav-btn{
+/* .register-nav-btn{
   color: #ffffff;
   background-color: #E35D29;
   font-size: 95%;
@@ -84,7 +84,7 @@
 .register-nav-btn:active{
   color: #ffffff;
   background-color: #E35D29;  
-}
+} */
 .company-nav-btn{
   color: #E35D29;
   background-color: #ffffff;
