@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import Input from "../input/input";
 import axios from 'axios';
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
+import './register.css'
 
 
 export default function Course(props) {
@@ -22,6 +23,9 @@ export default function Course(props) {
     fetchData()
   },[])
 
+  if(institutionName && course && monthlyPayment){
+    props.setCourseReady(true)
+  }
  function saveInstitutionName(e){
   const collegeName=(e.currentTarget.value)
   setInstitutionName(collegeName)
@@ -59,10 +63,9 @@ function fillFields(){
 
 if (props.step !== 2 ) return null
   return (
-    <div className="course-container">
-      <form>
-        <label htmlFor="cpf">Dados da Instituição de ensino:</label>
-
+    <div className="container">
+      <form class="form">
+        <p class="title">Sobre o Curso</p>
         <label htmlfor="uf">Em qual estado fica a instituição de ensino?</label>
         <select id="uf" name="uf">
           <option value="volvo"></option>

@@ -7,12 +7,9 @@ function Nav() {
   return (
     <section className='nav-bg'>
       <img className='nav-logo' src={logo} alt='Logo Pravaler' />
-      <Link to="/register">
-        <button className='register-nav-btn'>Cadastre-se</button>
-      </Link>
-      <Link to="/admin">
-        <button className='company-nav-btn'>Empresas</button>
-      </Link>
+
+      <button className='register-nav-btn' onClick={()=> window.location='register'}>Cadastrar</button>
+      <button className='company-nav-btn' onClick={()=> window.location='admin'}>Empresas</button>
     </section>
   )
 }

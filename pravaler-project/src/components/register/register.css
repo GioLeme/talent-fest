@@ -1,0 +1,43 @@
+.form{
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 8%;
+}
+
+.container{
+    display: flex;
+    font-size: 140%;
+}
+
+.title{
+    display: flex;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+
+/*WEB*/
+@media (max-width: 1900px) and (min-width: 700px){
+    .container{
+        display: flex;
+        align-items: center;
+        font-size: 140%;
+    }
+    .form{
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        padding: 5%;
+    }
+    .buttons{
+        display: flex;
+        justify-content: center;
+    }
+}
