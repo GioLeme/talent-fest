@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from '../../images/logo-negativo.png'
+import '../nav/nav.css'
 
 function Nav() {
   return (
-    <section>
-      <img src={logo} alt="Logo Pravaler" />
-      <button>CADASTRE-SE</button>
-      <button>EMPRESAS</button>
+    <section className='nav-bg'>
+      <img className='nav-logo' src={logo} alt='Logo Pravaler' />
+      <button className='register-nav-btn'>Cadastre-se</button>
+      <button className='company-nav-btn' onClick={()=> window.location='admin'}>Empresas</button>
     </section>
   )
 }
