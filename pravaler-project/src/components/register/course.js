@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import Input from '../input/input'
 
 export default function Course(e) {
+    const [uf, setUf] = useState([]);
+
+    fetch('https://laboratoria-2020-backend.herokuapp.com/estados/')
+        .then(results => {
+            return results.json()
+        })
+        .then(data => console.log(data))
 
     return (
         <div class="course-container">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css'
+import './simulator.css'
 
 const Simulator = () => {
   const [studentIncome, setStudentIncome] = useState('')
