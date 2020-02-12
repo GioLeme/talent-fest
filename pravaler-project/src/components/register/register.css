@@ -20,7 +20,10 @@
     margin-bottom: 7%;
     margin-top: 5%;
 }
-
+.warn{
+    font-size: 0.8rem;
+    color: red;
+}
 /*WEB*/
 @media (max-width: 1900px) and (min-width: 700px){
     .container{

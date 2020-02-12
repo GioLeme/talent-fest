@@ -28,17 +28,19 @@ const StudentData = (props) => {
     console.log(cpfValue);
 
     const cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;  
-    if (cpfValido.test(cpfValue) === false) {
-      console.log('oi');
-      
+    if (cpfValido.test(cpfValue) === false) {      
       cpfValue = cpfValue.replace( /\D/g , "");
       cpfValue = cpfValue.replace( /(\d{3})(\d)/ , "$1.$2"); 
       cpfValue = cpfValue.replace( /(\d{3})(\d)/ , "$1.$2");
       cpfValue = cpfValue.replace( /(\d{3})(\d{1,2})$/ , "$1-$2");
       setUserCpfNumber(cpfValue)    
+    } 
+    if(!validateCPF(cpfValue)){
+      document.querySelector('.warn').textContent='CPF inválido'
+    } else {
+      document.querySelector('.warn').textContent=''
+
     }
-    
-    console.log(validateCPF(cpfValue))
   }
 
   function nameValidate (e){
@@ -114,7 +116,7 @@ const StudentData = (props) => {
         onChange={(e) => cpfValidate(e)}
         focusOut={saveUserData}
       />
-      <p></p>
+      <p className='warn'></p>
       <label htmlFor="name">Nome</label>
       <Input 
         type={'text'} 
