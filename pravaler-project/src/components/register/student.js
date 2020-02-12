@@ -59,6 +59,11 @@ const StudentData = (props) => {
   function emailValidate (e){
     const emailValue= (e.currentTarget.value)
     setUserEmail(emailValue)
+    // const validEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    // if(validEmail.test(emailValue)===false){
+    //   console.log('oi')
+    // }
+    
   }
 
   function incomeValidate (e){

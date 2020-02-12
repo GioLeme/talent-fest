@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import fire from '../../config/config'
 import './admin.css'
+import SweetAlert from "sweetalert2-react";
 
 const Admin = () => {
   const [userList, setUserList] = useState([])
+  const [message, setMessage] = useState({
+    show: false,
+    title:'',
+    type:''
+  });
+
   console.log(userList);
 
   useEffect(() => {
@@ -22,7 +29,17 @@ const Admin = () => {
     fire.firestore().collection('userData')
       .doc(user.cpf)
       .update({ status: 'aproved' })
-    console.log(user.cpf);
+      .then(() => {
+        setMessage({
+          show : true,
+          title:'Empréstimo aprovado',
+          type:'success'
+        })
+        setTimeout(() => {
+          setMessage({})
+        }, 3000);
+        })
+    
 
   }
 
@@ -30,7 +47,16 @@ const Admin = () => {
     fire.firestore().collection('userData')
       .doc(user.cpf)
       .update({ status: 'declined' })
-    console.log(user.cpf);
+      .then(() => {
+        setMessage({
+          show : true,
+          title:'Empréstimo negado',
+          type:'error'
+        })
+        setTimeout(() => {
+          setMessage({})
+        }, 3000);
+        })
 }
 
   return (
@@ -54,6 +80,12 @@ const Admin = () => {
       
       <div className="return-btn-div">
       <button className='return-admin-button' onClick={()=> window.location='/'}>Voltar</button>
+      <SweetAlert
+        show={message.show}
+        type={message.type}
+        title={message.title}
+        showConfirmButton={false}
+      />
       </div>
     </section>
   )
