@@ -1,5 +1,7 @@
 .admin-layout{
-  margin-top: 6%;
+  background-color: #E35D29;
+  width: 100vw;
+  height: 100vh;
 }
 .data-board{
   display: flex;
@@ -14,13 +16,13 @@
   padding: 10px 5%;
   text-align: left;
   list-style: none;
-  border-bottom: solid 1px #a5a5a5;
   overflow: auto;
 }
 
 .control-btn{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 90vw;
 }
 .accept-btn{
   margin: 5px;
@@ -28,6 +30,7 @@
   width: 100px;
   color: white;
   background-color: green;
+  text-transform: uppercase;
 
 }
 .decline-btn{
@@ -36,7 +39,13 @@
   width: 100px;
   color: white;
   background-color: red;
-
+  text-transform: uppercase;
+}
+.user-data{
+  background-color: #ffffff;
+  padding: 5%;
+  border-radius: 10px;
+  width: 90vw;
 }
 
 @media (max-width: 540px) {
