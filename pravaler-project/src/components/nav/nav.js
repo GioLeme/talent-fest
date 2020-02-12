@@ -10,7 +10,9 @@ function Nav() {
       <Link to="/register">
         <button className='register-nav-btn'>Cadastre-se</button>
       </Link>
-      <button className='company-nav-btn'>Empresas</button>
+      <Link to="/admin">
+        <button className='company-nav-btn'>Empresas</button>
+      </Link>
     </section>
   )
 }
