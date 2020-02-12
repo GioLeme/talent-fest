@@ -1,6 +1,7 @@
 import React from 'react';
 import Imagestudy from  '../images/study.png';
-import '../home/home.css'
+import '../home/home.css';
+import Simulador from '../components/Simulator';
  
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
         <p className="p3">Faculdade?</p>
         <p className="p4"> A gente te ajuda a alcançar esse sonho</p>
       </div>
-      <img src={Imagestudy} alt='image' className="img-home"></img>
+      <img src={Imagestudy} alt='i' className="img-home"></img>
       </main>
 
       <section className="information-home">
@@ -32,6 +33,10 @@ function Home() {
           <li>Sonha em fazer intercâmbio? Aqui no PRAVALER você também pode financiar seus estudos no exterior.</li>
         </ul>
       </section>
+
+      <section>  <Simulador /> </section>
+
+
     </div> 
   </>
   )
