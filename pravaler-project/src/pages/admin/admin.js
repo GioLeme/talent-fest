@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import fire from '../../config/config'
+import Input from '../../components/input/input'
+import Button from '../../components/button/button'
 import './admin.css' 
 
 const Admin = () => {
-  const [userList, setUserList] = useState([])  
-  console.log(userList);
+  const [userList, setUserList] = useState([])
+  const [newUser, setNewUser] = useState('')
   
   useEffect(() => {
     fire.firestore().collection('userData')
@@ -34,7 +36,50 @@ const Admin = () => {
     
   }
 
+  const login = (e) => {
+    e.preventDefault()
+    const userMail = document.querySelector('.mail-input').value
+    const userPass = document.querySelector('.password-input').value
+    if(userMail && userPass){
+      setNewUser({userMail,userPass})
+    }
+  }
+
   return (
+    <>
+    {!newUser? 
+    
+    <section className="login-layout">
+      <div className='login-form'>
+      <h3 className='message-Login'>FAÇA SEU LOGIN</h3>
+      <div className='login-elements'>
+        <Input
+          type="email"
+          className="mail-input"
+          placeholder="Email"
+          required
+          // onChange={e => setNewUser({mail:e.target.value})}
+        />
+        <Input
+          type="password"
+          className="password-input"
+          placeholder="Senha"
+          required
+          // onChange={e => setPassword(e.target.value)}
+        />
+      
+        <Button
+          className="btn-primary"
+          title="Login"
+          handleClick={(e)=>login(e)}
+        />
+
+
+      </div>
+        </div>
+    
+    </section>
+    :
     <section className="admin-layout">
     <h2>Lista de Alunos Cadastrados</h2>
     <ul className="data-board">
@@ -59,7 +104,8 @@ const Admin = () => {
 
     </ul>
 
-    </section>
+    </section>}
+    </>
   )
 }
 

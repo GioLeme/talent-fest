@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Simulator />
+      {/* <Simulator /> */}
       <Switch>
       <Route exact path='/admin'><Admin/></Route>
         <Route exact path='/'><Home/></Route>

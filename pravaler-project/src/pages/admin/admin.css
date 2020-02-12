@@ -1,3 +1,60 @@
+.login-layout {
+  display: flex;
+  height: 90vh;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 50vh;
+  border: 1px solid #bbbb94;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.message-Login{
+  background-color: #444440 ;
+  color: #fff;
+  height: 40px;
+  width: 70%;
+  font-size: 16px;
+  font-weight: 300;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.login-elements{
+  width: 70%;
+  align-self: center;
+  align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.mail-input, .password-input{
+  padding: 8px;
+  font-size: 15px;
+  border: 0;
+  margin-bottom: 2%;
+  color: #333;
+  width: 100%;
+  background-color: #ffd1bfce;
+}
+.btn-primary {
+  border: 0;
+  width: 100%;
+  padding: 8px 5px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;   
+  background-color: #f15d22;
+}
+
 .admin-layout{
   margin-top: 6%;
 }
@@ -40,6 +97,9 @@
 }
 
 @media (max-width: 540px) {
+  .login-form{
+    width: 70%;
+  }
   .data-item{
     flex-direction: column;
   }
