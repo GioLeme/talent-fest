@@ -59,7 +59,6 @@ const Admin = () => {
         }, 3000);
         })
 }
-  }
 
   const login = (e) => {
     e.preventDefault()
