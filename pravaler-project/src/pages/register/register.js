@@ -6,6 +6,7 @@ import Button from "../../components/button/button"
 import fire from '../../config/config'
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
 import SweetAlert from "sweetalert2-react";
+import '../../components/button/button.css'
 
 
 
@@ -52,18 +53,21 @@ function RegisterPage() {
       <Student step={currentStep}/>
       <Course  step={currentStep}/>
       <Guarantor step={currentStep}/>
-      <div >
+      <div class="buttons" >
         <Button 
         handleClick={() => setCurrentStep(currentStep - 1)}
+        class= {'current-step'}
         title={'< anterior'}
         disabled={currentStep === 1}
         />
         {currentStep !== 3 
         ?<Button 
+          class= {'current-step'}
           handleClick={() => setCurrentStep(currentStep + 1)}
           title={'próximo >'}
           />
         :<Button 
+        class= {'current-step'}
         handleClick={saveDataInFirebase}
         title={'Finalizar Cadastro'}
         

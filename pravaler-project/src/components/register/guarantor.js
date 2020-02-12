@@ -3,6 +3,7 @@ import Input from "../input/input";
 import { validate as validateCPF } from "gerador-validador-cpf";
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
 import Button from "../button/button"
+import './register.css'
 
 export default function Guarantor(props) {
   const [guarantorCpf, setGuarantorCpfNumber] = useState("");
@@ -66,9 +67,9 @@ export default function Guarantor(props) {
 
   if (props.step !== 3) return null
   return (
-    <div className="guarantor-container">
-      <form>
-        <label htmlFor="cpf">Dados do garantidor:</label>
+    <div className="container">
+      <form class="form">
+      <p class="title">Sobre garantidor</p>
 
         <label htmlFor="cpf">CPF</label>
         <Input
