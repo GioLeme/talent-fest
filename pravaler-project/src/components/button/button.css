@@ -13,9 +13,7 @@
 /*WEB*/
 @media (max-width: 1900px) and (min-width: 700px){
     .current-step{
-        color: #f34d0b;
         width: 20%;
-       
         margin: 1%;
         font-weight: bold;
         font-size: 100%;
