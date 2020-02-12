@@ -19,7 +19,9 @@ const StudentData = (props) => {
     fillFields()
   },[])
 
-
+  if(userCpfNumber && userName && userCel && userEmail && userIncome){
+    props.setStudentReady(true)
+  }
   function cpfValidate(e){
     let cpfValue= (e.currentTarget.value)
     setUserCpfNumber(cpfValue)
