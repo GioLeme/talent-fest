@@ -11,10 +11,12 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 999;
 }
 .nav-logo{
   width: 27vw;
   margin-left: 3vw;
+  z-index: 999;
 }
 .register-nav-btn{
   color: #ffffff;
@@ -25,6 +27,7 @@
   padding: 2%;
   text-transform: uppercase;
   font-weight: bold;
+  z-index: 999;
 }
 .register-nav-btn:hover{
   color: #E35D29;
@@ -40,6 +43,7 @@
   padding: 2%;
   text-transform: uppercase;
   font-weight: bold;
+  z-index: 999;
 }
 .company-nav-btn:hover{
   color: #ffffff;

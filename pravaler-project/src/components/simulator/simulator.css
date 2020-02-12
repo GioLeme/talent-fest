@@ -65,6 +65,10 @@
   font-size: 18px;
   padding: 14px;
   border-radius: 7px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .simulator-result-container {

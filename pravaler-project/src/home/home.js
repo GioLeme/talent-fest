@@ -1,8 +1,8 @@
 import React from 'react';
 import Imagestudy from  '../images/study.png';
 import '../home/home.css';
-import Simulator from '../components/Simulator';
- 
+import Simulator from '../components/simulator/simulator';
+
 function Home() {
   return (
     <>
