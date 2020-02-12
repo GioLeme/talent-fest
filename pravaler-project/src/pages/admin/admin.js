@@ -53,7 +53,7 @@ const Admin = () => {
       </ul>
       
       <div className="return-btn-div">
-      <button className='return-admin-button' onClick={()=> window.location='home'}>Voltar</button>
+      <button className='return-admin-button' onClick={()=> window.location='/'}>Voltar</button>
       </div>
     </section>
   )

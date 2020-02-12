@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Input from '../../components/input/input';
 import { validate as validateCPF } from 'gerador-validador-cpf'
-import Button from "../button/button"
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
 // import { withRouter } from "react-router-dom";
 // import fire from '../../config/config'
