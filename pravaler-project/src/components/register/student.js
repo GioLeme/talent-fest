@@ -1,119 +1,153 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Input from '../../components/input/input';
-import Button from '../../components/button/button'
-import fire from '../../config/config'
+import { validate as validateCPF } from 'gerador-validador-cpf'
+import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
+import './register.css'
+// import { withRouter } from "react-router-dom";
+// import fire from '../../config/config'
 
-const StudentData = () => {
-  const [cpfNumber, setCpfNumber]=useState('')
-  const [name, setName]=useState('')
-  const [tel, setTel]=useState('')
-  const [cel, setCel]=useState('')
-  const [email, setEmail]=useState('')
-  const [income, setIncome]=useState('')
 
-    return (
-      <form>
-        <Input 
-          type={'number'} 
-          placeholder={'cpf'}
-         // onChange={(e) => cpfValidate(e)}
-        />
-        <Input 
-          type={'text'} 
-          placeholder={'Nome Completo'}
-          onChange={(e) => nameValidate(e)}
-        />
-        <Input 
-          type={'number'} 
-          placeholder={'Telefone'}
-          onChange={(e) => telValidate(e)}
-        />
-         <Input 
-          type={'number'} 
-          placeholder={'Celular'}
-          onChange={(e) => celValidate(e)}
-        />
-         <Input 
-          type={'email'} 
-          placeholder={'Email'}
-          onChange={(e) => emailValidate(e)}
-        />
-         <Input 
-          type={'number'} 
-          placeholder={'Renda mensal'}
-          onChange={(e) => incomeValidate(e)}
-        />
-        <Button
-        handleClick={sendForm}
-        title={'cadastrar'}
-        />
-      </form>
-    );
+const StudentData = (props) => {
+  const [userCpfNumber, setUserCpfNumber]=useState('')
+  const [userName, setUserName]=useState('')
+  const [userCel, setUserCel]=useState('')
+  const [userEmail, setUserEmail]=useState('')
+  const [userIncome, setUserIncome]=useState('')
 
+
+  useEffect(() => {
+    fillFields()
+  },[])
+
+  if(userCpfNumber && userName && userCel && userEmail && userIncome){
+    props.setStudentReady(true)
+  }
   function cpfValidate(e){
-    const cpfValue= (e.currentTarget.value)
-    setCpfNumber(cpfValue)
-    console.log(cpfValue)
+    let cpfValue= (e.currentTarget.value)
+    setUserCpfNumber(cpfValue)
+    console.log(cpfValue);
+
+    const cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;  
+    if (cpfValido.test(cpfValue) === false) {
+      console.log('oi');
+      
+      cpfValue = cpfValue.replace( /\D/g , "");
+      cpfValue = cpfValue.replace( /(\d{3})(\d)/ , "$1.$2"); 
+      cpfValue = cpfValue.replace( /(\d{3})(\d)/ , "$1.$2");
+      cpfValue = cpfValue.replace( /(\d{3})(\d{1,2})$/ , "$1-$2");
+      setUserCpfNumber(cpfValue)    
+    }
+    console.log(validateCPF(cpfValue))
   }
 
   function nameValidate (e){
     const nameValue= (e.currentTarget.value)
-    setName(nameValue)
-    console.log(nameValue)
-  }
-
-  function telValidate (e){
-    const telValue= (e.currentTarget.value)
-    setTel(telValue)
-    console.log(telValue)
+    setUserName(nameValue)
   }
 
   function celValidate (e){
-    const celValue= (e.currentTarget.value)
-    setCel(celValue)
-    console.log(celValue)
+    let phoneValue= (e.currentTarget.value)
+    const validPhone = /^((([0-9]{2})[0-9]{3}.[0-9]{3}-[0-9]{2}))$/; 
+    if (validPhone.test(phoneValue) === false) {
+      phoneValue = phoneValue.replace( /\D/g , "");
+      phoneValue = phoneValue.replace( /(\d{0})(\d)/ , "$1($2"); 
+      phoneValue = phoneValue.replace( /(\d{2})(\d)/ , "$1) $2"); 
+      phoneValue = phoneValue.replace( /(\d{5})(\d)/ , "$1-$2");
+      setUserCel(phoneValue)    
+    }
   }
 
   function emailValidate (e){
     const emailValue= (e.currentTarget.value)
-    setEmail(emailValue)
-    console.log(emailValue)
+    setUserEmail(emailValue)
   }
 
   function incomeValidate (e){
     const incomeValue= (e.currentTarget.value)
-    setIncome(incomeValue)
-    console.log(incomeValue)
+    setUserIncome(incomeValue)
   }
 
-  function sendForm(e){
-    e.preventDefault()
-    const saveUserData = {
-      cpf: cpfNumber,
-      Username: name,
-      userTel: tel,
-      UserCel: cel,
-      UserEmail: email,
-      UserIncome: income
+
+  function saveUserData(){
+    const userData = {
+      UserCpf: userCpfNumber,
+      UserName: userName,
+      UserCel: userCel,
+      UserEmail: userEmail,
+      UserIncome: userIncome,
+      status:'pending',
+      score: (Math.random()*5).toFixed(1)
     }
-    fire
-      .firestore()
-      .collection("userData")
-      .add(saveUserData)
-      .then(() => {
-      console.log('foi, deusa!')
-      })
-      .catch(err => console.log('falhou miserávi'));
+    saveInLocalStorage(userData)
+
+    
   }
+
+  function fillFields(){
+    const getSavedData = getInLocalStorage()
+    if(!getSavedData) return
+    
+    setUserCpfNumber(getSavedData.UserCpf)
+    setUserName(getSavedData.UserName)
+    setUserCel(getSavedData.UserCel)
+    setUserEmail(getSavedData.UserEmail)
+    setUserIncome(getSavedData.UserIncome)
+    console.log(getSavedData)
+  }
+  if (props.step !== 1) return null
+  return (
+    <div class="container">
+    <form class="form">
+      <p class="title">Sobre Você</p>
+      <label htmlFor="cpf">CPF</label>
+      <Input 
+        type={'text'} 
+        placeholder={'CPF'}
+        value={userCpfNumber}
+        maxlength={14}
+        onChange={(e) => cpfValidate(e)}
+        focusOut={saveUserData}
+      />
+      <label htmlFor="name">Nome</label>
+      <Input 
+        type={'text'} 
+        value={userName}
+        placeholder={'Nome Completo'}
+        onChange={(e) => nameValidate(e)}
+        focusOut={saveUserData}
+      />
+      <label htmlFor="cel">Celular</label>
+       <Input 
+        type={'text'} 
+        placeholder={'Celular'}
+        value={userCel}
+        maxlength={15}
+        onChange={(e) => celValidate(e)}
+        focusOut={saveUserData}
+      />
+      <label htmlFor="e-mail">E-mail</label>
+       <Input 
+        type={'email'} 
+        value={userEmail}
+        placeholder={'Email'}
+        onChange={(e) => emailValidate(e)}
+        focusOut={saveUserData}
+      />
+      <label htmlFor="renda">Renda mensal</label>
+       <Input 
+        type={'number'} 
+        value={userIncome}
+        placeholder={'Renda mensal'}
+        onChange={(e) => incomeValidate(e)}
+        focusOut={saveUserData}
+      />
+     
+    </form>
+    </div>
+  );
 
 };
 
+
 export default StudentData
-
-// telefone celular
-//^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$
-
-// renda mensal
-// ^[1-9]\d{0,2}(\.\d{3})*,\d{2}$
-
     
