@@ -1,0 +1,103 @@
+/*MOBILE*/
+@media (max-width: 700px){
+    *{
+        margin: 0;
+        padding: 0;
+        border:none
+    }
+    
+    .container-home{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        background-image: url('../images/study.png');
+        background: linear-gradient(180deg, #3A4851 0%, rgba(255, 255, 255, 0) 100%), #E35D29;
+        /* height: 50%; */
+        height: 200vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      .img-home{
+        width: 150%;
+        /* width: 100vw; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: -50%;
+        /* margin-left: -150rem; */
+        margin-top: 15%;
+      }
+
+      .main-home{
+        font-family:'Suez One', serif;
+        font-size: 150%;
+        margin-top: -10%;  /* add esse */
+      }
+
+      .question-home{
+        margin-left: 50%;
+        text-align: center;
+        position: absolute;
+        left: 10%;
+        color: white;
+        margin-top: 30%;
+      }
+
+      .p1{
+        margin-left:-180%;
+        text-transform: uppercase;
+        margin-bottom: 10%;
+      }
+
+      .p2{
+        margin-left: -140%;
+        text-transform: uppercase;
+        margin-bottom: 12%;
+      }
+
+      .p3{
+        margin-left: -95%;
+        text-transform: uppercase;
+        margin-bottom: 50%;
+      }
+
+      .p4{
+        /* margin-left: -40%; */
+        margin-right: 20%;
+        margin-left: -10%;
+      }
+
+      .information-home{
+        margin-right: 3%;
+        margin-left: 3%;
+        padding: 10%;
+      }
+
+      .p5{
+        margin-bottom: 7%;
+
+      }
+
+      .p6{
+        margin-bottom: 10%;
+
+      }
+
+      h1{
+        font-family:'Suez One', serif;
+        font-size: 150%;
+        margin-left: 3%;
+        margin-bottom: 9%;
+      }
+
+
+
+
+
+
+
+}
