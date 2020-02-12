@@ -53,21 +53,21 @@ function RegisterPage() {
       <Student step={currentStep} studentReady={studentReady} setStudentReady={setStudentReady}/>
       <Course  step={currentStep} courseReady={courseReady} setCourseReady={setCourseReady}/>
       <Guarantor step={currentStep} guarantorReady={guarantorReady} setGuarantorReady={setGuarantorReady}/>
-      <div  class="buttons" >
+      <div  className="buttons" >
         <Button 
         handleClick={() => setCurrentStep(currentStep - 1)}
-        class= {'current-step'}
+        className= {'current-step'}
         title={'< anterior'}
         disabled={currentStep === 1}
         />
         {currentStep !== 3 
         ?<Button 
-          class= {'current-step'}
+          className= {'current-step'}
           handleClick={() => setCurrentStep(currentStep + 1)}
           title={'próximo >'}
           />
           :<Button 
-          class= {'current-step'}
+          className= {'current-step'}
           handleClick={saveDataInFirebase}
           title={'Finalizar Cadastro'}
           disabled={!studentReady, !courseReady, !guarantorReady}

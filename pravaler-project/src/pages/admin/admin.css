@@ -1,3 +1,60 @@
+.login-layout {
+  display: flex;
+  height: 90vh;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 50vh;
+  border: 1px solid #ffd1bfce;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.message-Login{
+  background-color: #444440 ;
+  color: #fff;
+  height: 40px;
+  width: 70%;
+  font-size: 16px;
+  font-weight: 300;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.login-elements{
+  width: 70%;
+  align-self: center;
+  align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.mail-input, .password-input{
+  padding: 8px;
+  font-size: 15px;
+  border: 0;
+  margin-bottom: 2%;
+  color: #333;
+  width: 100%;
+  background-color: #ffd1bfce;
+}
+.btn-primary {
+  border: 0;
+  width: 100%;
+  padding: 8px 5px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;   
+  background-color: #f15d22;
+}
+
 .admin-layout{
   background-color: #E35D29;
   width: 100vw;
@@ -18,6 +75,7 @@
 }
 .data-item{
   display: flex;
+  flex-direction: column;
   width: 90%;
   justify-content: space-between;
   padding: 10px 5%;
@@ -91,6 +149,9 @@
 }
 
 @media (min-width: 540px) {
+.login-form{
+  width: 50%;
+}
 .admin-title{
   font-size: 200%;
   margin-left: 20px;
