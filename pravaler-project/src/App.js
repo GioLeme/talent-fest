@@ -9,11 +9,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 function App() {
-  fetch('https://laboratoria-2020-backend.herokuapp.com/estados/')
-        .then(results => {
-            return results.json()
-        })
-        .then(data => console.log(data))
   return (
     <Router>
       <Nav />
