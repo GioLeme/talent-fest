@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Input from '../../components/input/input';
 import { validate as validateCPF } from 'gerador-validador-cpf'
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
+import './register.css'
 // import { withRouter } from "react-router-dom";
 // import fire from '../../config/config'
 
@@ -100,8 +101,10 @@ const StudentData = (props) => {
   }
   if (props.step !== 1) return null
   return (
-    <form>
-      <p>Dados do estudante:</p>
+    <div class="container">
+    <form class="form">
+      <p class="title">Sobre Você</p>
+      <label htmlFor="cpf">CPF</label>
       <Input 
         type={'text'} 
         placeholder={'CPF'}
@@ -110,7 +113,7 @@ const StudentData = (props) => {
         onChange={(e) => cpfValidate(e)}
         focusOut={saveUserData}
       />
-      <p></p>
+      <label htmlFor="name">Nome</label>
       <Input 
         type={'text'} 
         value={userName}
@@ -118,6 +121,7 @@ const StudentData = (props) => {
         onChange={(e) => nameValidate(e)}
         focusOut={saveUserData}
       />
+      <label htmlFor="cel">Celular</label>
        <Input 
         type={'text'} 
         placeholder={'Celular'}
@@ -126,6 +130,7 @@ const StudentData = (props) => {
         onChange={(e) => celValidate(e)}
         focusOut={saveUserData}
       />
+      <label htmlFor="e-mail">E-mail</label>
        <Input 
         type={'email'} 
         value={userEmail}
@@ -133,6 +138,7 @@ const StudentData = (props) => {
         onChange={(e) => emailValidate(e)}
         focusOut={saveUserData}
       />
+      <label htmlFor="renda">Renda mensal</label>
        <Input 
         type={'number'} 
         value={userIncome}
@@ -142,6 +148,7 @@ const StudentData = (props) => {
       />
      
     </form>
+    </div>
   );
 
 };

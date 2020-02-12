@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import fire from '../../config/config'
-import './admin.css'
+
+import Input from '../../components/input/input'
+import Button from '../../components/button/button'
+import './admin.css' 
 import SweetAlert from "sweetalert2-react";
 
 const Admin = () => {
   const [userList, setUserList] = useState([])
-  const [message, setMessage] = useState({
+  const [newUser, setNewUser] = useState('')
+  
+    const [message, setMessage] = useState({
     show: false,
     title:'',
     type:''
   });
-
-  console.log(userList);
 
   useEffect(() => {
     fire.firestore().collection('userData')
@@ -39,8 +42,6 @@ const Admin = () => {
           setMessage({})
         }, 3000);
         })
-    
-
   }
 
   const decline = (user) => {
@@ -58,18 +59,32 @@ const Admin = () => {
         }, 3000);
         })
 }
+  }
+
+  const login = (e) => {
+    e.preventDefault()
+    const userMail = document.querySelector('.mail-input').value
+    const userPass = document.querySelector('.password-input').value
+
+    fire.auth().signInWithEmailAndPassword(userMail, userPass).then((user) =>{
+      setNewUser(user)    
+    })
+  }
 
   return (
+    <>
+    {fire.auth().currentUser? 
     <section className="admin-layout">
       <h2 className='admin-title'>Alunos Cadastrados</h2>
       <ul className="data-board">
         {userList.map((user) => (
             <div className="user-data">
-              <p>Nome: {user.nome}</p>
-              <p>CPF: {user.cpf}</p>
+              <p>Nome: {user.UserName}</p>
+              <p>CPF: {user.UserCpf}</p>
+              <p>E-mail: {user.UserEmail}</p>
               <p>Score: {user.score}</p>
-              <p>Renda: </p>
-              <p>Renda do Fiador</p>
+              <p>Renda: {user.UserIncome}</p>
+              <p>Renda do Fiador: {user.MonthlyIncome}</p>
               <div className="control-btn">
                 <input type="submit" value="Reprovar" className="decline-btn" onClick={() => decline(user)} />
                 <input type="submit" value="Aprovar" className="accept-btn" onClick={() => accept(user)} />
@@ -77,7 +92,6 @@ const Admin = () => {
             </div>
         ))}
       </ul>
-      
       <div className="return-btn-div">
       <button className='return-admin-button' onClick={()=> window.location='/'}>Voltar</button>
       <SweetAlert
@@ -88,14 +102,37 @@ const Admin = () => {
       />
       </div>
     </section>
+    :
+    <section className="login-layout">
+    <div className='login-form'>
+    <h3 className='message-Login'>FAÇA SEU LOGIN</h3>
+    <div className='login-elements'>
+      <Input
+        type="email"
+        className="mail-input"
+        placeholder="Email"
+        required
+      />
+      <Input
+        type="password"
+        className="password-input"
+        placeholder="Senha"
+        required
+      />
+    
+      <Button
+        className="btn-primary"
+        title="Login"
+        handleClick={(e)=>login(e)}
+      />
+
+
+    </div>
+      </div>
+  
+  </section>}
+    </>
   )
 }
 
 export default Admin
-
-
-// 3. Painel de Administração
-// 3.1. Tela de Login
-//     3.1.1.  O login deverá ser validado por email e senha
-// 3.2. O painel de administração deverá permitir consulta aos alunos cadastrados, bem como permitir a aprovação ou reprovação da IES. 
-// 3.3. Após aprovação ou reprovação do crédito, o aluno deverá receber um email, sms e whatsapp informando. 

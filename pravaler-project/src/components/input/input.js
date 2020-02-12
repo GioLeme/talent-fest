@@ -3,7 +3,7 @@ import './input.css'
 
 export default function Input(props,e){
     return(
-        <input className="input"
+        <input className={props.className}
             value={props.value}
             type={props.type}
             onBlur={props.focusOut}
