@@ -41,8 +41,7 @@ function RegisterPage() {
         setMessage({})
       }, 3000);
       });
-      
-    // props.history.push("/register/course");
+      {window.location='/'}
   }
    
   return (
@@ -64,6 +63,7 @@ function RegisterPage() {
         :<Button 
         handleClick={saveDataInFirebase}
         title={'Finalizar Cadastro'}
+        
         />
       }
         <SweetAlert
