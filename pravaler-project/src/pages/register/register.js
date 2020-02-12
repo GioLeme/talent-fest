@@ -4,7 +4,7 @@ import Course from '../../components/register/course'
 import Guarantor from "../../components/register/guarantor";
 import Button from "../../components/button/button"
 import fire from '../../config/config'
-import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
+import {getInLocalStorage} from '../../utils/handleRegister'
 import SweetAlert from "sweetalert2-react";
 
 function RegisterPage() {
@@ -41,7 +41,7 @@ function RegisterPage() {
         setMessage({})
       }, 3000);
       });
-      {window.location='/'}
+      // {window.location='/'}
   }
    
   return (

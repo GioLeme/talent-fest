@@ -78,6 +78,11 @@
   border-radius: 10px;
   font-weight: bold;
 }
+.return-admin-button:hover{
+  background-color: #ffffff;
+  color: #3A4851;
+  cursor: pointer;
+}
 .return-btn-div{
   width: 100vw;
   display: flex;

@@ -2,7 +2,7 @@ import React, { useState , useEffect} from "react";
 import Input from "../input/input";
 import { validate as validateCPF } from "gerador-validador-cpf";
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
-import Button from "../button/button"
+
 
 export default function Guarantor(props) {
   const [guarantorCpf, setGuarantorCpfNumber] = useState("");
