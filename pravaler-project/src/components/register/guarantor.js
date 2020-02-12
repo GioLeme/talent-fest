@@ -5,6 +5,7 @@ import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
 import Button from "../button/button"
 import './register.css'
 
+
 export default function Guarantor(props) {
   const [guarantorCpf, setGuarantorCpfNumber] = useState("");
   const [guarantorName, setGuarantorName] = useState("");
@@ -14,6 +15,9 @@ export default function Guarantor(props) {
     fillFields()
   },[])
 
+  if(guarantorCpf && guarantorName && monthlyIncome){
+    props.setGuarantorReady(true)
+  }
 
   function cpfValidate(e) {
     let cpfValue = e.currentTarget.value;

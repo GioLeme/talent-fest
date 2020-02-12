@@ -1,5 +1,14 @@
 .admin-layout{
-  margin-top: 6%;
+  background-color: #E35D29;
+  width: 100vw;
+  height: 100%;
+}
+.admin-title{
+  font-family: 'Lato', sans-serif;
+  color: #ffffff;
+  padding-left: 15px; 
+  margin-left: 5px;
+  padding-top: 15px;
 }
 .data-board{
   display: flex;
@@ -14,38 +23,97 @@
   padding: 10px 5%;
   text-align: left;
   list-style: none;
-  border-bottom: solid 1px #a5a5a5;
   overflow: auto;
 }
-
 .control-btn{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 90vw;
 }
 .accept-btn{
-  margin: 5px;
-  height: 30px;
-  width: 100px;
+  margin: 10px;
+  height: 5vh;
+  width: 30vw;
   color: white;
   background-color: green;
-
+  text-transform: uppercase;
+  font-size: 90%;
+  border-radius: 5px;
+}
+.accept-btn:hover{
+  cursor: pointer;
+  background-color: #E35D29;
 }
 .decline-btn{
-  margin: 5px;
-  height: 30px;
-  width: 100px;
+  margin: 10px;
+  height: 5vh;
+  width: 30vw;
   color: white;
   background-color: red;
-
+  text-transform: uppercase;
+  font-size: 90%;
+  border-radius: 5px;
+}
+.decline-btn:hover{
+  cursor: pointer;
+  background-color: #E35D29;
+}
+.user-data{
+  background-color: #ffffff;
+  padding: 5%;
+  margin: 15px;
+  border-radius: 10px;
+  width: 90vw;
+  font-family: 'Lato', sans-serif;
+  font-size: 110%;
+}
+.return-admin-button{
+  margin: 10px;
+  height: 5vh;
+  width: 30vw;
+  color: #ffffff;
+  background-color: #3A4851;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.return-admin-button:hover{
+  background-color: #ffffff;
+  color: #3A4851;
+  cursor: pointer;
+}
+.return-btn-div{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #E35D29;
 }
 
-@media (max-width: 540px) {
-  .data-item{
-    flex-direction: column;
-  }
-  .control-btn{
-    align-self: center;
-  }
-  
-
+@media (min-width: 540px) {
+.admin-title{
+  font-size: 200%;
+  margin-left: 20px;
+}  
+.data-board{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.data-item{
+  flex-direction: column;
+}
+.control-btn{
+  align-items: center;
+  width: 25vw;
+}
+.user-data{
+  width: 30vw;
+  padding: 2.5%;
+  font-size: 120%;
+}
+.return-admin-button{
+  width: 20vh;
+}
 }

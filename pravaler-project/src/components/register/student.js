@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Input from '../../components/input/input';
 import { validate as validateCPF } from 'gerador-validador-cpf'
-import Button from "../button/button"
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
 import './register.css'
 // import { withRouter } from "react-router-dom";
@@ -20,7 +19,9 @@ const StudentData = (props) => {
     fillFields()
   },[])
 
-
+  if(userCpfNumber && userName && userCel && userEmail && userIncome){
+    props.setStudentReady(true)
+  }
   function cpfValidate(e){
     let cpfValue= (e.currentTarget.value)
     setUserCpfNumber(cpfValue)

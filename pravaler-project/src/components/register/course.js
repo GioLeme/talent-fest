@@ -13,7 +13,9 @@ export default function Course(props) {
     fillFields()
   },[])
 
-
+  if(institutionName && course && monthlyPayment){
+    props.setCourseReady(true)
+  }
  function saveInstitutionName(e){
   const collegeName=(e.currentTarget.value)
   setInstitutionName(collegeName)
