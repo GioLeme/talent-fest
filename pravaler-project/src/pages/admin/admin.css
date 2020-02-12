@@ -9,7 +9,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 70%;
   height: 50vh;
   border: 1px solid #bbbb94;
   align-items: center;
@@ -66,6 +66,7 @@
 }
 .data-item{
   display: flex;
+  flex-direction: column;
   width: 90%;
   justify-content: space-between;
   padding: 10px 5%;
@@ -96,12 +97,12 @@
 
 }
 
-@media (max-width: 540px) {
+@media (min-width: 700px) {
   .login-form{
-    width: 70%;
+    width: 50%;
   }
   .data-item{
-    flex-direction: column;
+    flex-direction: row;
   }
   .control-btn{
     align-self: center;

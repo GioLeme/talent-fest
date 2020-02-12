@@ -25,7 +25,6 @@ const Admin = () => {
     .doc(user.cpf)
     .update({status: 'aproved'})
     console.log(user.cpf);
-
   }
 
   const decline = (user) => {
@@ -33,53 +32,21 @@ const Admin = () => {
     .doc(user.cpf)
     .update({status: 'declined'})
     console.log(user.cpf);
-    
   }
 
   const login = (e) => {
     e.preventDefault()
     const userMail = document.querySelector('.mail-input').value
     const userPass = document.querySelector('.password-input').value
-    if(userMail && userPass){
-      setNewUser({userMail,userPass})
-    }
+
+    fire.auth().signInWithEmailAndPassword(userMail, userPass).then((user) =>{
+      console.log(user);
+    })
   }
 
   return (
     <>
-    {!newUser? 
-    
-    <section className="login-layout">
-      <div className='login-form'>
-      <h3 className='message-Login'>FAÇA SEU LOGIN</h3>
-      <div className='login-elements'>
-        <Input
-          type="email"
-          className="mail-input"
-          placeholder="Email"
-          required
-          // onChange={e => setNewUser({mail:e.target.value})}
-        />
-        <Input
-          type="password"
-          className="password-input"
-          placeholder="Senha"
-          required
-          // onChange={e => setPassword(e.target.value)}
-        />
-      
-        <Button
-          className="btn-primary"
-          title="Login"
-          handleClick={(e)=>login(e)}
-        />
-
-
-      </div>
-        </div>
-    
-    </section>
-    :
+    {fire.auth().currentUser? 
     <section className="admin-layout">
     <h2>Lista de Alunos Cadastrados</h2>
     <ul className="data-board">
@@ -104,16 +71,38 @@ const Admin = () => {
 
     </ul>
 
-    </section>}
+    </section>
+    :
+    <section className="login-layout">
+    <div className='login-form'>
+    <h3 className='message-Login'>FAÇA SEU LOGIN</h3>
+    <div className='login-elements'>
+      <Input
+        type="email"
+        className="mail-input"
+        placeholder="Email"
+        required
+      />
+      <Input
+        type="password"
+        className="password-input"
+        placeholder="Senha"
+        required
+      />
+    
+      <Button
+        className="btn-primary"
+        title="Login"
+        handleClick={(e)=>login(e)}
+      />
+
+
+    </div>
+      </div>
+  
+  </section>}
     </>
   )
 }
 
 export default Admin
-
-
-// 3. Painel de Administração
-// 3.1. Tela de Login
-//     3.1.1.  O login deverá ser validado por email e senha
-// 3.2. O painel de administração deverá permitir consulta aos alunos cadastrados, bem como permitir a aprovação ou reprovação da IES. 
-// 3.3. Após aprovação ou reprovação do crédito, o aluno deverá receber um email, sms e whatsapp informando. 
