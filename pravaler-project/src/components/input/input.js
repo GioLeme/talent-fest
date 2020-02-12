@@ -9,6 +9,8 @@ export default function Input(props,e){
             onBlur={props.focusOut}
             placeholder={props.placeholder}
             onChange={props.onChange}
+            maxLength={props.maxlength}
+            // pattern={props.pattern}
             >
         </input>
     )
