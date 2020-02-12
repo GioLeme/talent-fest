@@ -1,0 +1,51 @@
+.admin-layout{
+  margin-top: 6%;
+}
+.data-board{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.data-item{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  padding: 10px 5%;
+  text-align: left;
+  list-style: none;
+  border-bottom: solid 1px #a5a5a5;
+  overflow: auto;
+}
+
+.control-btn{
+  display: flex;
+  flex-direction: column;
+}
+.accept-btn{
+  margin: 5px;
+  height: 30px;
+  width: 100px;
+  color: white;
+  background-color: green;
+
+}
+.decline-btn{
+  margin: 5px;
+  height: 30px;
+  width: 100px;
+  color: white;
+  background-color: red;
+
+}
+
+@media (max-width: 540px) {
+  .data-item{
+    flex-direction: column;
+  }
+  .control-btn{
+    align-self: center;
+  }
+  
+
+}
