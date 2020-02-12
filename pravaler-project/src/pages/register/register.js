@@ -7,9 +7,6 @@ import fire from '../../config/config'
 import {saveInLocalStorage, getInLocalStorage} from '../../utils/handleRegister'
 import SweetAlert from "sweetalert2-react";
 
-
-
-
 function RegisterPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [message, setMessage] = useState({

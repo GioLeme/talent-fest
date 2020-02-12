@@ -1,6 +1,7 @@
 import React from 'react';
 import Imagestudy from  '../images/study.png';
-import '../home/home.css'
+import '../home/home.css';
+import Simulator from '../components/Simulator';
 
 function Home() {
   return (
@@ -13,9 +14,8 @@ function Home() {
         <p className="p3">Faculdade?</p>
         <p className="p4"> A gente te ajuda a alcançar esse sonho</p>
       </div>
-      <img src={Imagestudy} alt='image' className="img-home"></img>
+      <img src={Imagestudy} alt='Logo Pravaler' className="img-home"></img>
       </main>
-
       <section className="information-home">
         <h1>QUEM SOMOS</h1>
         <p className="p5">O PRAVALER é uma empresa de crédito estudantil que tem como objetivo facilitar a forma de pagamento pra você estudar.</p>
@@ -32,6 +32,7 @@ function Home() {
           <li>Sonha em fazer intercâmbio? Aqui no PRAVALER você também pode financiar seus estudos no exterior.</li>
         </ul>
       </section>
+      <Simulator />
     </div> 
   </>
   )
