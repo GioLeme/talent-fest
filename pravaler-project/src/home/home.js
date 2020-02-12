@@ -16,10 +16,10 @@ function Home() {
       <img src={Imagestudy} alt='image' className="img-home"></img>
       </main>
 
-      <section>
+      <section className="information-home">
         <h1>QUEM SOMOS</h1>
-        <p>O PRAVALER é uma empresa de crédito estudantil que tem como objetivo facilitar a forma de pagamento pra você estudar.</p>
-        <p>A gente acredita que a educação é pra todo mundo e pra mudar o mundo</p>
+        <p className="p5">O PRAVALER é uma empresa de crédito estudantil que tem como objetivo facilitar a forma de pagamento pra você estudar.</p>
+        <p className="p6">A gente acredita que a educação é pra todo mundo e pra mudar o mundo</p>
         <h1>VANTAGENS:</h1>
         <ul>
           <li>Não precisa de conta em banco.</li>
