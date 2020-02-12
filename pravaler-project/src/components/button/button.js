@@ -4,8 +4,9 @@ export default function Button(props){
         <button className={props.class}
             type= "submit"
             onClick={props.handleClick}
-            title={props.title}
+            disabled={props.disabled}
             >
+                {props.title}
         </button>
     )
 }
