@@ -1,3 +1,5 @@
+
+
 .simulator-container {
   background-color: #f8f9fa;
   width: 100%;
@@ -63,6 +65,10 @@
   font-size: 18px;
   padding: 14px;
   border-radius: 7px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .simulator-result-container {
@@ -80,4 +86,16 @@
   font-weight: 700;
   font-size: 28px;
   color: #03bdd5;
+}
+
+
+@media (min-width: 540px){
+  .simulator-container {
+    background-color: #f8f9fa;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+  }
+
 }
