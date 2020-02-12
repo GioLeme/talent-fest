@@ -63,7 +63,6 @@ const Admin = () => {
             </div>
         ))}
       </ul>
-      
       <div className="return-btn-div">
       <button className='return-admin-button' onClick={()=> window.location='/'}>Voltar</button>
       </div>
