@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Home from '../src/home/home';
 import Nav from '../src/components/nav/nav';
-import Simulator from './components/simulator/simulator';
 import Admin from './pages/admin/admin';
 import RegisterPage from './pages/register/register';
 import './styles.css';
