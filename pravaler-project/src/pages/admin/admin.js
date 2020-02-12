@@ -4,7 +4,8 @@ import './admin.css'
 
 const Admin = () => {
   const [userList, setUserList] = useState([])  
-
+  console.log(userList);
+  
   useEffect(() => {
     fire.firestore().collection('userData')
     .where("status", "==", "pending")
@@ -19,16 +20,15 @@ const Admin = () => {
 
   const accept = (user) => {
     fire.firestore().collection('userData')
-    .doc(user.id)
+    .doc(user.cpf)
     .update({status: 'aproved'})
     console.log(user.cpf);
 
-    
   }
 
   const decline = (user) => {
     fire.firestore().collection('userData')
-    .doc(user.id)
+    .doc(user.cpf)
     .update({status: 'declined'})
     console.log(user.cpf);
     
