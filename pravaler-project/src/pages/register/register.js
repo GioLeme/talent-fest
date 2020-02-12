@@ -45,7 +45,7 @@ function RegisterPage() {
         setMessage({})
       }, 3000);
       });
-      // {window.location='/'}
+      {window.location='/'}
   }
    
   return (

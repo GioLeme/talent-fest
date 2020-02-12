@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import fire from '../../config/config'
+
 import Input from '../../components/input/input'
 import Button from '../../components/button/button'
 import './admin.css' 
+import SweetAlert from "sweetalert2-react";
 
 const Admin = () => {
   const [userList, setUserList] = useState([])
   const [newUser, setNewUser] = useState('')
   
+    const [message, setMessage] = useState({
+    show: false,
+    title:'',
+    type:''
+  });
+
   useEffect(() => {
     fire.firestore().collection('userData')
       .where("status", "==", "pending")
@@ -24,12 +32,33 @@ const Admin = () => {
     fire.firestore().collection('userData')
       .doc(user.cpf)
       .update({ status: 'aproved' })
+      .then(() => {
+        setMessage({
+          show : true,
+          title:'Empréstimo aprovado',
+          type:'success'
+        })
+        setTimeout(() => {
+          setMessage({})
+        }, 3000);
+        })
   }
 
   const decline = (user) => {
     fire.firestore().collection('userData')
       .doc(user.cpf)
       .update({ status: 'declined' })
+      .then(() => {
+        setMessage({
+          show : true,
+          title:'Empréstimo negado',
+          type:'error'
+        })
+        setTimeout(() => {
+          setMessage({})
+        }, 3000);
+        })
+}
   }
 
   const login = (e) => {
@@ -65,6 +94,12 @@ const Admin = () => {
       </ul>
       <div className="return-btn-div">
       <button className='return-admin-button' onClick={()=> window.location='/'}>Voltar</button>
+      <SweetAlert
+        show={message.show}
+        type={message.type}
+        title={message.title}
+        showConfirmButton={false}
+      />
       </div>
     </section>
     :
